@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>My App</title>
+</head>
+<body>
+	<h1>STUDENT FORM</h1>
+	<form  th:action="@{/form/save}"  method="POST">
+	
+		Name :<input type= "text" name="name"  />
+		Marks : <input type= "text" name="marks"  />
+		Gender: <select name= "gender" >
+		
+		<option disabled>Choose</option>
+		<option th:each="s:${genderList}" th:value="${s.lookupCode}" th:text="${s.lookupValue}">
+		</select>
+		
+		<button th:value="Submit">Submit</button>
+	</form>
+	<table>
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>	
+			<th>Gender</th>
+			<th>Marks</th>	
+		</tr>
+		</thead>
+		<tbody>
+		<tr  th:each="s:${students}">
+			<td  th:text="${s.studentId}"></td>
+			<td th:text="${s.name}">
+			</td>
+			<td th:text="${s.gender}">
+			</td>
+				<td th:text="${s.marks}">
+			</td>
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+	<br>
+	<br>
+<div >
+
+<a  th:href="@{/list/{gendertype} (gendertype='male')}">List of Male Students</a>
+     <a th:href="@{/list/{gendertype} (gendertype='female')}">List of Female Students</a>
+
+</div>
+
+</body>
+</html>

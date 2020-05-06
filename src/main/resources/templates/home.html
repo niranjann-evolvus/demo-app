@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" >
+<head>
+	<title>My App</title>
+</head>
+<body>
+	<div>
+		<h1 th:text="#{home.page.label}"></h1>
+		<p> Hello  <span th:text="${name}"></span>  </p>
+			<a  th:href="@{/form}">Click here for  Student List</a>
+		<a th:href="@{/employee-list}">Click here for the list of employees</a>
+	</div>
+	<div>
+	<div th:text="${roles}"> </div>
+	<div th:text="${authName}"></div>
+	</div>
+	<a role="button" th:href="@{/logout}">Logout</a>
+</body>
+</html>

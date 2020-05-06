@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>My App</title>
+</head>
+<body>
+	
+	<h1>Index</h1>
+	<p th:text="#{hello.label}">  <span th:text="${name}" ></span></p>
+	<a th:href="@{/home}" >Home</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>My App</title>
+</head>
+<body>
+<div>
+<h1>EMPLOYEE FORM</h1>
+	<form  th:action="@{employee-form/save}"  method="POST">
+	
+		Name :<input type= "text" name="employeeName"  />
+		Salary : <input type= "text" name="salary"  />
+				
+		<button th:value="Submit">Submit</button>
+	</form>
+</div>
+	<hr>
+	<br>
+<h1>List of Employees</h1>
+<table>
+		<thead>
+		<tr>
+			<th>Employee Id</th>
+			<th>Employee Name</th>	
+			<th>Salary</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr  th:each="e:${employees}">
+			<td  th:text="${e.employeeId}"/>
+			<td th:text="${e.employeeName}"/>
+			<td th:text="${e.salary}"/>
+	   </tr>
+		</tbody>
+	
+	
+	</table>
+</html>

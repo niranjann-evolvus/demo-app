@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<title>My App</title>
+</head>
+<body>
+<h1>List of <span th:text="${gender}"></span> students  </h1>
+<table>
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>	
+			<th>Gender</th>
+			<th>Marks</th>	
+		</tr>
+		</thead>
+		<tbody>
+		<tr  th:each="s:${studentListBasedOnGender}">
+			<td  th:text="${s.studentId}"></td>
+			<td th:text="${s.name}">
+			</td>
+			<td th:text="${s.gender}">
+			</td>
+				<td th:text="${s.marks}">
+			</td>
+			</tr>
+		</tbody>
+	
+	
+	</table>
+</html>
