@@ -1,6 +1,6 @@
 ---
 description: >-
-  This is a demo CRUD application built using Srping Boot, Spring Data
+  This is a demo CRUD application built using Spring Boot, Spring Data
   JDBC,Spring Security, Thymeleaf and HTML5
 ---
 
